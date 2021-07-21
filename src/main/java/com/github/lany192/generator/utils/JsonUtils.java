@@ -1,6 +1,7 @@
 package com.github.lany192.generator.utils;
 
 import com.google.gson.Gson;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.Arrays;
 import java.util.List;
@@ -10,7 +11,7 @@ public class JsonUtils {
      * json转对象
      */
     public static <T> T json2object(String json, Class<T> cls) {
-        if (OtherUtils.isEmpty(json)) {
+        if (StringUtils.isEmpty(json)) {
             return null;
         }
         T t = null;
@@ -30,7 +31,7 @@ public class JsonUtils {
     }
 
     public static <T> List<T> json2list(String json, Class<T[]> clazz) {
-        if (OtherUtils.isEmpty(json)) {
+        if (StringUtils.isEmpty(json)) {
             return null;
         }
         Gson gson = new Gson();
