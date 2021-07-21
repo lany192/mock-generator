@@ -1,7 +1,5 @@
 package com.github.lany192.generator.entity;
 
-import java.time.LocalDate;
-
 public class User {
     private String nickname;
     private String username;
@@ -13,6 +11,15 @@ public class User {
     private String wechat;
     private String alipay;
     private String avatar;
+    private String signature;
+
+    public String getSignature() {
+        return signature;
+    }
+
+    public void setSignature(String signature) {
+        this.signature = signature;
+    }
 
     public String getNickname() {
         return nickname;

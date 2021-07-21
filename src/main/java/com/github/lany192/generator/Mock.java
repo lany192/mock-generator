@@ -15,6 +15,7 @@ public class Mock {
             user.setEmail(new EmailGenerator(5, 9).build());
             user.setSex(Integer.parseInt(new SexGenerator().build()));
             user.setPhone(new PhoneGenerator().build());
+            user.setSignature(new SignatureGenerator().build());
             System.out.println("模拟用户:" + JsonUtils.object2json(user));
         }
     }
