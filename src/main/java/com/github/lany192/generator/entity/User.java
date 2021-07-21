@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class User {
     private String nickname;
     private String username;
-    private LocalDate birthday;
+    private String birthday;
     private int sex;
     private String email;
     private String idCard;
@@ -30,11 +30,11 @@ public class User {
         this.username = username;
     }
 
-    public LocalDate getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(LocalDate birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 
