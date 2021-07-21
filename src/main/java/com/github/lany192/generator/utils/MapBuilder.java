@@ -4,13 +4,13 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class MapBuilder {
-    private Map<String, Object> map = new LinkedHashMap<>();
+    private final Map<String, Object> map = new LinkedHashMap<>();
 
     private MapBuilder() {
 
     }
 
-    public static MapBuilder of() {
+    public static MapBuilder get() {
         return new MapBuilder();
     }
 

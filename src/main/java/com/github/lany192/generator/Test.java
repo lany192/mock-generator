@@ -1,21 +1,17 @@
 package com.github.lany192.generator;
 
-import com.github.lany192.generator.utils.OtherUtils;
+import com.github.lany192.generator.utils.JsonUtils;
+import com.github.lany192.generator.utils.MapBuilder;
 
 public class Test {
 
     public static void main(String[] args) {
-        System.out.println(byte[].class.getName());
-        try {
-            Class clazz = Class.forName("[B");
-            System.out.println(byte[].class == clazz);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+        for (int i = 0; i < 100; i++) {
+            System.out.println(JsonUtils.object2json(MapBuilder.get()
+                    .put("username", "姓名" + i)
+                    .put("id_card", new IDCardGenerator().build())
+                    .put("email", new EmailGenerator(5, 9).build())
+                    .build()));
         }
-        System.out.println("-------------------------------------");
-        String name = "mmsMemberLevel";
-        System.out.println(name + "转" + OtherUtils.hump2path(name));
-        String name2 = "IntegrationChangeHistory";
-        System.out.println(name2 + "转" + OtherUtils.hump2path(name2));
     }
 }
