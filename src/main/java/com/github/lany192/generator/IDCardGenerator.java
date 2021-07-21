@@ -1,6 +1,9 @@
 package com.github.lany192.generator;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 public class IDCardGenerator implements Generator {
 
@@ -3542,32 +3545,6 @@ public class IDCardGenerator implements Generator {
         return code;
     }
 
-    /**
-     * 随机出生日期
-     *
-     * @return
-     */
-    private String randomBirthday() {
-        Calendar birthday = Calendar.getInstance();
-        birthday.set(Calendar.YEAR, (int) (Math.random() * 60) + 1950);
-        birthday.set(Calendar.MONTH, (int) (Math.random() * 12));
-        birthday.set(Calendar.DATE, (int) (Math.random() * 31));
-
-        StringBuilder builder = new StringBuilder();
-        builder.append(birthday.get(Calendar.YEAR));
-        long month = birthday.get(Calendar.MONTH) + 1;
-        if (month < 10) {
-            builder.append("0");
-        }
-        builder.append(month);
-        long date = birthday.get(Calendar.DATE);
-        if (date < 10) {
-            builder.append("0");
-        }
-        builder.append(date);
-        return builder.toString();
-    }
-
     /*
      * <p>18位身份证验证</p>
      * 根据〖中华人民共和国国家标准 GB 11643-1999〗中有关公民身份号码的规定，公民身份号码是特征组合码，由十七位数字本体码和一位数字校验码组成。
@@ -3614,7 +3591,7 @@ public class IDCardGenerator implements Generator {
     public String build() {
         StringBuilder builder = new StringBuilder();
         builder.append(this.randomAreaCode());
-        builder.append(this.randomBirthday());
+        builder.append(new BirthdayGenerator().build());
         builder.append(this.randomCode());
         builder.append(this.calcTrailingNumber(builder.toString().toCharArray()));
         return builder.toString();

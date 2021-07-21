@@ -3,7 +3,7 @@ package com.github.lany192.generator;
 import com.github.lany192.generator.utils.JsonUtils;
 import com.github.lany192.generator.utils.MapBuilder;
 
-public class Test {
+public class Mock {
 
     public static void main(String[] args) {
         for (int i = 0; i < 100; i++) {
