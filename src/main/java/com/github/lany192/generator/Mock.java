@@ -7,15 +7,16 @@ public class Mock {
 
     public static void main(String[] args) {
         for (int i = 0; i < 100; i++) {
-            int sex = Integer.parseInt(new SexGenerator().build());
+            SexGenerator sexGenerator =new SexGenerator();
+
             User user = new User();
-            user.setUsername(new ChineseNameGenerator(sex == 1).build());
+            user.setUsername(new ChineseNameGenerator(sexGenerator.isBoy()).build());
             user.setNickname(new NicknameGenerator().build());
             user.setBirthday(new BirthdayGenerator().getBirthday().toString());
             user.setAvatar(new AvatarGenerator().build());
             user.setIdCard(new IDCardGenerator().build());
             user.setEmail(new EmailGenerator(5, 9).build());
-            user.setSex(sex);
+            user.setSex(sexGenerator.getSex());
             user.setPhone(new PhoneGenerator().build());
             user.setSignature(new SignatureGenerator().build());
             System.out.println("模拟用户:" + JsonUtils.object2json(user));
