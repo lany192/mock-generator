@@ -8,6 +8,7 @@ public class Mock {
     public static void main(String[] args) {
         for (int i = 0; i < 100; i++) {
             User user = new User();
+            user.setNickname(new NicknameGenerator().build());
             user.setBirthday(new BirthdayGenerator().getBirthday().toString());
             user.setAvatar(new AvatarGenerator().build());
             user.setIdCard(new IDCardGenerator().build());
