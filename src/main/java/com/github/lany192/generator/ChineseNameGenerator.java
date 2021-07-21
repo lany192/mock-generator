@@ -38,7 +38,7 @@ public class ChineseNameGenerator implements Generator {
                 "南门", "呼延", "子车", "颛孙", "端木", "巫马", "公西", "漆雕", "车正", "壤驷", "公良", "拓跋", "夹谷", "宰父", "谷梁", "段干", "百里", "东郭", "微生",
                 "梁丘", "左丘", "东门", "西门", "南宫", "第五", "公仪", "公乘", "太史", "仲长", "叔孙", "屈突", "尔朱", "东乡", "相里", "胡母", "司城", "张廖", "雍门",
                 "毋丘", "贺兰", "綦毋", "屋庐", "独孤", "南郭", "北宫", "王孙"};
-        return items[RandomUtils.nextInt(0, items.length) - 1];
+        return items[RandomUtils.nextInt(0, items.length-1)];
     }
 
     @Override
@@ -57,6 +57,6 @@ public class ChineseNameGenerator implements Generator {
             int index2 = RandomUtils.nextInt(0, data.length() - 1);
             third = data.substring(index2, index2 + 1);
         }
-        return first + " " + second + third;
+        return first + second + third;
     }
 }
