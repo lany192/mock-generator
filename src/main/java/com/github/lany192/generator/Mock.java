@@ -6,28 +6,36 @@ import com.github.lany192.generator.utils.JsonUtils;
 
 public class Mock {
 
-    public static void main(String[] args) {
-        for (int i = 0; i < 100; i++) {
-            SexGenerator sexGenerator = new SexGenerator();
-            BirthdayGenerator birthdayGenerator = new BirthdayGenerator();
+    public static User createUser() {
+        SexGenerator sexGenerator = new SexGenerator();
+        BirthdayGenerator birthdayGenerator = new BirthdayGenerator();
 
-            User user = new User();
-            user.setUsername(new ChineseNameGenerator(sexGenerator.isBoy()).build());
-            user.setNickname(new NicknameGenerator().build());
-            user.setBirthday(birthdayGenerator.getBirthday().toString());
-            user.setAvatar(new AvatarGenerator().build());
-            user.setIdCard(new IDCardGenerator(birthdayGenerator.getBirthday()).build());
-            user.setEmail(new EmailGenerator(5, 9).build());
-            user.setSex(sexGenerator.getSex());
-            user.setPhone(new PhoneGenerator().build());
-            user.setSignature(new SignatureGenerator().build());
-            user.setAddress(new AddressGenerator().build());
-            System.out.println("模拟用户:" + JsonUtils.object2json(user));
-        }
-//        try {
+        User user = new User();
+        user.setUsername(new ChineseNameGenerator(sexGenerator.isBoy()).build());
+        user.setNickname(new NicknameGenerator().build());
+        user.setBirthday(birthdayGenerator.getBirthday().toString());
+        user.setAvatar(new AvatarGenerator().build());
+        user.setIdCard(new IDCardGenerator(birthdayGenerator.getBirthday()).build());
+        user.setEmail(new EmailGenerator(5, 9).build());
+        user.setSex(sexGenerator.getSex());
+        user.setPhone(new PhoneGenerator().build());
+        user.setSignature(new SignatureGenerator().build());
+        user.setAddress(new AddressGenerator().build());
+
+        //        try {
 //            System.out.println("城市:" + CityHelper.getInstance().getJson());
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
+
+        return user;
+
+    }
+
+    public static void main(String[] args) {
+        for (int i = 0; i < 100; i++) {
+            User user = createUser();
+            System.out.println("模拟用户:" + JsonUtils.object2json(user));
+        }
     }
 }
