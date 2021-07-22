@@ -1,6 +1,6 @@
 package com.github.lany192.generator.entity;
 
-public class User {
+public class MockUser {
     private String nickname;
     private String username;
     private String birthday;

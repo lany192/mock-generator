@@ -1,16 +1,16 @@
 package com.github.lany192.generator;
 
 import com.github.lany192.generator.builder.*;
-import com.github.lany192.generator.entity.User;
+import com.github.lany192.generator.entity.MockUser;
 import com.github.lany192.generator.utils.JsonUtils;
 
 public class Mock {
 
-    public static User createUser() {
+    public static MockUser createUser() {
         SexGenerator sexGenerator = new SexGenerator();
         BirthdayGenerator birthdayGenerator = new BirthdayGenerator();
 
-        User user = new User();
+        MockUser user = new MockUser();
         user.setUsername(new ChineseNameGenerator(sexGenerator.isBoy()).build());
         user.setNickname(new NicknameGenerator().build());
         user.setBirthday(birthdayGenerator.getBirthday().toString());
@@ -34,8 +34,8 @@ public class Mock {
 
     public static void main(String[] args) {
         for (int i = 0; i < 100; i++) {
-            User user = createUser();
-            System.out.println("模拟用户:" + JsonUtils.object2json(user));
+            MockUser mockUser = createUser();
+            System.out.println("模拟用户:" + JsonUtils.object2json(mockUser));
         }
     }
 }
