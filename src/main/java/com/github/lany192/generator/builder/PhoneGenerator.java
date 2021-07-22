@@ -1,4 +1,4 @@
-package com.github.lany192.generator;
+package com.github.lany192.generator.builder;
 
 import org.apache.commons.lang3.RandomUtils;
 

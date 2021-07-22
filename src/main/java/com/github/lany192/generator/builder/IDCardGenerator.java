@@ -1,4 +1,4 @@
-package com.github.lany192.generator;
+package com.github.lany192.generator.builder;
 
 import com.github.lany192.generator.utils.AreaUtils;
 
