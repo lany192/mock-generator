@@ -20,6 +20,7 @@ public class Mock {
             user.setSex(sexGenerator.getSex());
             user.setPhone(new PhoneGenerator().build());
             user.setSignature(new SignatureGenerator().build());
+            user.setAddress(new AddressGenerator().build());
             System.out.println("模拟用户:" + JsonUtils.object2json(user));
         }
 //        try {

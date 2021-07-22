@@ -12,6 +12,15 @@ public class User {
     private String alipay;
     private String avatar;
     private String signature;
+    private String address;
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
     public String getSignature() {
         return signature;
