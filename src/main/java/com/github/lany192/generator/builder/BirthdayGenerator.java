@@ -17,18 +17,11 @@ public class BirthdayGenerator implements Generator {
         localDate = LocalDate.of(birthday.get(Calendar.YEAR), birthday.get(Calendar.MONTH) + 1, birthday.get(Calendar.DATE));
     }
 
-    public LocalDate getBirthday() {
+    @Override
+    public LocalDate build() {
         if (localDate == null) {
             random();
         }
         return localDate;
-    }
-
-    @Override
-    public String build() {
-        if (localDate == null) {
-            random();
-        }
-        return localDate.toString().replace("-", "");
     }
 }

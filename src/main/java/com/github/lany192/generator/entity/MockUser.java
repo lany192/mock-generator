@@ -1,9 +1,11 @@
 package com.github.lany192.generator.entity;
 
+import java.time.LocalDate;
+
 public class MockUser {
     private String nickname;
     private String username;
-    private String birthday;
+    private LocalDate birthday;
     private int sex;
     private String email;
     private String idCard;
@@ -46,11 +48,11 @@ public class MockUser {
         this.username = username;
     }
 
-    public String getBirthday() {
+    public LocalDate getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(String birthday) {
+    public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
 

@@ -19,18 +19,11 @@ public class SexGenerator implements Generator {
         return sex == 1;
     }
 
-    public int getSex() {
+    @Override
+    public Integer build() {
         if (sex == -1) {
             random();
         }
         return sex;
-    }
-
-    @Override
-    public String build() {
-        if (sex == -1) {
-            random();
-        }
-        return String.valueOf(sex);
     }
 }

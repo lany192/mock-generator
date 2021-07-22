@@ -13,11 +13,11 @@ public class Mock {
         MockUser user = new MockUser();
         user.setUsername(new ChineseNameGenerator(sexGenerator.isBoy()).build());
         user.setNickname(new NicknameGenerator().build());
-        user.setBirthday(birthdayGenerator.getBirthday().toString());
+        user.setBirthday(birthdayGenerator.build());
         user.setAvatar(new AvatarGenerator().build());
-        user.setIdCard(new IDCardGenerator(birthdayGenerator.getBirthday()).build());
+        user.setIdCard(new IDCardGenerator(birthdayGenerator.build()).build());
         user.setEmail(new EmailGenerator(5, 9).build());
-        user.setSex(sexGenerator.getSex());
+        user.setSex(sexGenerator.build());
         user.setPhone(new PhoneGenerator().build());
         user.setSignature(new SignatureGenerator().build());
         user.setAddress(new AddressGenerator().build());
