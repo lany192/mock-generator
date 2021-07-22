@@ -5,6 +5,7 @@ import com.github.lany192.generator.entity.Area;
 import com.github.lany192.generator.entity.CityBean;
 import com.github.lany192.generator.utils.JsonUtils;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.util.ResourceUtils;
@@ -40,9 +41,30 @@ public class CityHelper {
         }
         return instance;
     }
+    /**
+     * 获取resource目录下的文件路径
+     * 需要这样做的原因是：程序打包成jar包后用ResourceUtils.getFile()获得的路径一部分包含在jar里面，所以无法识别
+     */
+    private String getFilePath(String path) {
+        InputStream is = null;
+        try {
+            ClassPathResource resource = new ClassPathResource(path);
+            is = resource.getInputStream();
+            File tmpFile = File.createTempFile("tmp-", ".tmp");
+            FileUtils.copyInputStreamToFile(is, tmpFile);
+            return tmpFile.getPath();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            IOUtils.closeQuietly(is);
+        }
+        return path;
+    }
 
     public String getJson() throws IOException {
-        File file = ResourceUtils.getFile("classpath:city.json");
+        String dbPath = getFilePath("city.json");
+        System.out.println(dbPath);
+        File file = new File(dbPath);
         String content = FileUtils.readFileToString(file, StandardCharsets.UTF_8);
         return content;
     }
