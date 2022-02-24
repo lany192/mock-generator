@@ -11,6 +11,6 @@
 		}
 	}
     
-    	dependencies {
-	        implementation 'com.github.lany192:mock-generator:1.0.0'
-	    }
+	dependencies {
+		implementation 'com.github.lany192:mock-generator:1.0.0'
+	}
