@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class SignatureGenerator implements Generator {
+public class SignatureGenerator implements Generator<String> {
 
     @Override
     public String build() {

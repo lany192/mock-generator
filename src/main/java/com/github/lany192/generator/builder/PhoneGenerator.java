@@ -4,7 +4,7 @@ import org.apache.commons.lang3.RandomUtils;
 
 import java.util.Random;
 
-public class PhoneGenerator implements Generator{
+public class PhoneGenerator implements Generator<String> {
 
     @Override
     public String build() {

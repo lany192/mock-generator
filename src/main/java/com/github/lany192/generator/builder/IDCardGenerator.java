@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
 
-public class IDCardGenerator implements Generator {
+public class IDCardGenerator implements Generator<String> {
     private LocalDate birthday;
 
     public IDCardGenerator(LocalDate localDate) {

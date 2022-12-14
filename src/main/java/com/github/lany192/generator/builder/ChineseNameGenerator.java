@@ -2,7 +2,7 @@ package com.github.lany192.generator.builder;
 
 import org.apache.commons.lang3.RandomUtils;
 
-public class ChineseNameGenerator implements Generator {
+public class ChineseNameGenerator implements Generator<String> {
     private final boolean isBoy;
 
     public ChineseNameGenerator(boolean isBoy) {

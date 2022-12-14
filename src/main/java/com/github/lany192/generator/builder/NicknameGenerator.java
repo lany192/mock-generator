@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class NicknameGenerator implements Generator{
+public class NicknameGenerator implements Generator<String> {
 
     @Override
     public String build() {

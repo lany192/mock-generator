@@ -2,7 +2,7 @@ package com.github.lany192.generator.builder;
 
 import java.util.Random;
 
-public class AvatarGenerator implements Generator{
+public class AvatarGenerator implements Generator<String> {
 
     @Override
     public String build() {

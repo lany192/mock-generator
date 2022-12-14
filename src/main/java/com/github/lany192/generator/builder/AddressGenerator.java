@@ -2,7 +2,7 @@ package com.github.lany192.generator.builder;
 
 import org.apache.commons.lang3.RandomUtils;
 
-public class AddressGenerator implements Generator {
+public class AddressGenerator implements Generator<String> {
 
     @Override
     public String build() {

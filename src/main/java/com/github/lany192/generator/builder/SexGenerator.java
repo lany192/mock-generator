@@ -5,7 +5,7 @@ import org.apache.commons.lang3.RandomUtils;
 /**
  * 0表示未知，1表示男，2表示女
  */
-public class SexGenerator implements Generator {
+public class SexGenerator implements Generator<Integer> {
     private int sex;
 
     public boolean isBoy() {

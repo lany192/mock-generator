@@ -2,7 +2,7 @@ package com.github.lany192.generator.builder;
 
 import org.apache.commons.lang3.RandomUtils;
 
-public class EmailGenerator implements Generator {
+public class EmailGenerator implements Generator<String> {
     /**
      * 最小长度
      */

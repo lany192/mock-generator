@@ -3,7 +3,8 @@ package com.github.lany192.generator.builder;
 import java.time.LocalDate;
 import java.util.Calendar;
 
-public class BirthdayGenerator implements Generator<LocalDate> {
+public class LocalDateGenerator implements Generator {
+
     private LocalDate localDate;
 
     @Override
