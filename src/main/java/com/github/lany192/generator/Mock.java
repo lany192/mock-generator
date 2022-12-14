@@ -2,9 +2,8 @@ package com.github.lany192.generator;
 
 import com.github.lany192.generator.builder.*;
 import com.github.lany192.generator.entity.MockUser;
-import com.github.lany192.generator.utils.JsonUtils;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class Mock {
@@ -47,7 +46,16 @@ public class Mock {
 //        }
 
         for (int i = 0; i < 100; i++) {
-            LocalTimeGenerator generator = new LocalTimeGenerator(LocalTime.of(5, 50, 1), LocalTime.of(20, 1, 31));
+            LocalTime start = LocalTime.of(5, 50, 1);
+            LocalTime end = LocalTime.of(20, 1, 31);
+            LocalTimeGenerator generator = new LocalTimeGenerator(start, end);
+            System.out.println("模拟时间:" + generator.build().toString());
+        }
+
+        for (int i = 0; i < 100; i++) {
+            LocalDateTime start = LocalDateTime.of(2000, 11, 1, 5, 50, 1);
+            LocalDateTime end = LocalDateTime.of(2022, 1, 31, 20, 1, 31);
+            LocalDateTimeGenerator generator = new LocalDateTimeGenerator(start, end);
             System.out.println("模拟时间:" + generator.build().toString());
         }
     }
