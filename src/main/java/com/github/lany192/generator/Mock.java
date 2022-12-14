@@ -37,18 +37,18 @@ public class Mock {
 
     public static void main(String[] args) {
 //        for (int i = 0; i < 100; i++) {
-//            MockUser mockUser = createUser();
-//            System.out.println("模拟用户:" + JsonUtils.object2json(mockUser));
+//            MockUser user = createUser();
+//            System.out.println("模拟用户:" + JsonUtils.object2json(user));
 //        }
-
+//
 //        for (int i = 0; i < 100; i++) {
-//            LocalDate localDate = new LocalDateGenerator(LocalDate.of(2000,1,1),LocalDate.of(2022,12,31)).build();
-//            System.out.println("模拟日期:" + localDate.toString());
+//            LocalDateGenerator generator = new LocalDateGenerator(LocalDate.of(2000, 11, 1), LocalDate.of(2022, 1, 31));
+//            System.out.println("模拟日期:" + generator.build().toString());
 //        }
 
         for (int i = 0; i < 100; i++) {
-            LocalTime localTime = new LocalTimeGenerator(LocalTime.of(1,1,1),LocalTime.of(23,59,59)).build();
-            System.out.println("模拟日期:" + localTime.toString());
+            LocalTimeGenerator generator = new LocalTimeGenerator(LocalTime.of(5, 50, 1), LocalTime.of(20, 1, 31));
+            System.out.println("模拟时间:" + generator.build().toString());
         }
     }
 }

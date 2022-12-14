@@ -16,8 +16,14 @@ public class LocalTimeGenerator implements Generator<LocalTime> {
     @Override
     public LocalTime build() {
         int hour = RandomUtils.nextInt(start.getHour(), end.getHour());
-        int minute = RandomUtils.nextInt(start.getMinute(), end.getMinute());
-        int second = RandomUtils.nextInt(start.getSecond(), end.getSecond());
-        return LocalTime.of(hour, minute, second);
+        int minute = RandomUtils.nextInt(0, 59);
+        int second = RandomUtils.nextInt(0, 59);
+        LocalTime result = LocalTime.of(hour, minute, second);
+        //如果比start小，重新生成
+        if (result.isAfter(start) && result.isBefore(end)) {
+            return result;
+        } else {
+            return build();
+        }
     }
 }

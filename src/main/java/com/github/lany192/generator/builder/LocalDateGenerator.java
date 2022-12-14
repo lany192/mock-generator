@@ -3,6 +3,7 @@ package com.github.lany192.generator.builder;
 import org.apache.commons.lang3.RandomUtils;
 
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Calendar;
 
 public class LocalDateGenerator implements Generator<LocalDate> {
@@ -16,14 +17,16 @@ public class LocalDateGenerator implements Generator<LocalDate> {
 
     @Override
     public LocalDate build() {
-        int year = RandomUtils.nextInt(start.getYear(), end.getYear());
-        int month = RandomUtils.nextInt(1, 12);
-        int date = RandomUtils.nextInt(1, 31);
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.YEAR, RandomUtils.nextInt(start.getYear(), end.getYear()));
+        calendar.set(Calendar.MONTH, RandomUtils.nextInt(0, 11));
+        calendar.set(Calendar.DATE, RandomUtils.nextInt(1, 31));
+        LocalDate result = calendar.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 
-        Calendar birthday = Calendar.getInstance();
-        birthday.set(Calendar.YEAR, year);
-        birthday.set(Calendar.MONTH, month);
-        birthday.set(Calendar.DATE, date);
-        return LocalDate.of(birthday.get(Calendar.YEAR), birthday.get(Calendar.MONTH) + 1, birthday.get(Calendar.DATE));
+        if (result.isAfter(start) && result.isBefore(end)) {
+            return result;
+        } else {
+            return build();
+        }
     }
 }
