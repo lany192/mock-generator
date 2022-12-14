@@ -44,13 +44,13 @@ public class Mock {
 //            LocalDateGenerator generator = new LocalDateGenerator(LocalDate.of(2000, 11, 1), LocalDate.of(2022, 1, 31));
 //            System.out.println("模拟日期:" + generator.build().toString());
 //        }
-
-        for (int i = 0; i < 100; i++) {
-            LocalTime start = LocalTime.of(5, 50, 1);
-            LocalTime end = LocalTime.of(20, 1, 31);
-            LocalTimeGenerator generator = new LocalTimeGenerator(start, end);
-            System.out.println("模拟时间:" + generator.build().toString());
-        }
+//
+//        for (int i = 0; i < 100; i++) {
+//            LocalTime start = LocalTime.of(5, 50, 1);
+//            LocalTime end = LocalTime.of(20, 1, 31);
+//            LocalTimeGenerator generator = new LocalTimeGenerator(start, end);
+//            System.out.println("模拟时间:" + generator.build().toString());
+//        }
 
         for (int i = 0; i < 100; i++) {
             LocalDateTime start = LocalDateTime.of(2000, 11, 1, 5, 50, 1);
