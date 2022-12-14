@@ -8,6 +8,11 @@ public class LocalTimeGenerator implements Generator<LocalTime> {
     private final LocalTime start;
     private final LocalTime end;
 
+    public LocalTimeGenerator() {
+        start = LocalTime.of(1, 1, 1);
+        end = LocalTime.of(23, 59, 59);
+    }
+
     public LocalTimeGenerator(LocalTime start, LocalTime end) {
         this.start = start;
         this.end = end;

@@ -10,6 +10,11 @@ public class LocalDateGenerator implements Generator<LocalDate> {
     private final LocalDate start;
     private final LocalDate end;
 
+    public LocalDateGenerator() {
+        start = LocalDate.of(2000, 1, 1);
+        end = LocalDate.of(2023, 11, 31);
+    }
+
     public LocalDateGenerator(LocalDate start, LocalDate end) {
         this.start = start;
         this.end = end;
