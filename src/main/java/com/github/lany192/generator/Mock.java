@@ -5,6 +5,7 @@ import com.github.lany192.generator.entity.MockUser;
 import com.github.lany192.generator.utils.JsonUtils;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class Mock {
 
@@ -39,9 +40,15 @@ public class Mock {
 //            MockUser mockUser = createUser();
 //            System.out.println("模拟用户:" + JsonUtils.object2json(mockUser));
 //        }
+
+//        for (int i = 0; i < 100; i++) {
+//            LocalDate localDate = new LocalDateGenerator(LocalDate.of(2000,1,1),LocalDate.of(2022,12,31)).build();
+//            System.out.println("模拟日期:" + localDate.toString());
+//        }
+
         for (int i = 0; i < 100; i++) {
-            LocalDate localDate = new LocalDateGenerator(LocalDate.of(2000,1,1),LocalDate.of(2022,12,31)).build();
-            System.out.println("模拟日期:" + localDate.toString());
+            LocalTime localTime = new LocalTimeGenerator(LocalTime.of(1,1,1),LocalTime.of(23,59,59)).build();
+            System.out.println("模拟日期:" + localTime.toString());
         }
     }
 }
